@@ -1,0 +1,30 @@
+<div class="w-50 mx-auto">
+    <h1 class="text-center">
+        <input type="search" name="search" class="form-control" placeholder="Search"  (keyup)="search($event.target.value)" > 
+    </h1>
+    
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-4" *ngFor="let member of allMembers" >
+            <div class="our-team-main">
+
+                <div class="team-front">
+                    <img [src]="member.avatar_url" class="img-fluid" />
+                    <h3>{{member.login}}</h3>
+                    <br>
+                </div>
+
+                <div class="team-back">
+                    <div class="container">
+                        <div class="row justify-content-center align align-items-center">
+                            <button type="button" class="btn btn-info" (click)="goToMemberRepo(member.login)">Click to see Repo's</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
